@@ -5,48 +5,43 @@ function LongestSubstring() {
 
     const [text, setText] = useState("");
 
-    const [result, setResult] = useState({
-        substring: "",
-        length: 0
-    });
+    const result = longestSubstring(text);
 
-    function handleAnalyze() {
-
-        const analysis = longestSubstring(text);
-
-        setResult(analysis);
-
-    }
+    const uniqueCharacters = new Set(text);
 
     return (
 
         <div>
 
             <h2>
-                Longest Substring Analyzer
+                Smart Text Analyzer 🚀
             </h2>
 
             <input
                 type="text"
-                placeholder="Enter some text..."
+                placeholder="Start typing..."
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
 
-            <button onClick={handleAnalyze}>
-                Analyze
-            </button>
-
             <hr />
 
-            <h3>Results</h3>
+            <h3>Analysis</h3>
+
+            <p>
+                <strong>Input Length:</strong> {text.length}
+            </p>
+
+            <p>
+                <strong>Unique Characters:</strong> {uniqueCharacters.size}
+            </p>
 
             <p>
                 <strong>Longest Substring:</strong> {result.substring}
             </p>
 
             <p>
-                <strong>Length:</strong> {result.length}
+                <strong>Longest Length:</strong> {result.length}
             </p>
 
         </div>

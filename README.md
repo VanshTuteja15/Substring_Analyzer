@@ -1,70 +1,206 @@
-# Getting Started with Create React App
+# 🚀 Smart Text Analyzer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React application inspired by **LeetCode #3 – Longest Substring Without Repeating Characters**. This project transforms a classic algorithm into an interactive text analysis tool with a clean dashboard interface.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📖 About
 
-### `npm start`
+Smart Text Analyzer helps users analyze text in real time by finding the **longest substring without repeating characters** using the **Sliding Window** algorithm.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instead of simply returning a number like the original LeetCode problem, this application provides an interactive dashboard that displays useful statistics about the entered text.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* 🔍 Real-time text analysis
+* 🚀 Sliding Window algorithm (O(n))
+* 📏 Displays the longest substring without repeating characters
+* 📊 Shows substring length
+* 🔠 Counts total characters
+* 🧩 Counts unique characters
+* 🔁 Counts duplicate characters
+* 🏷️ Displays unique characters as badges
+* 🌙 Dark Mode
+* 📋 Copy longest substring to clipboard
+* 🗑️ Clear input button
+* 📱 Responsive design for desktop and mobile
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Built With
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* React.js
+* JavaScript (ES6+)
+* CSS3
+* Git & GitHub
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+src
+│
+├── components
+│   └── (Reusable UI Components)
+│
+├── problems
+│   └── LongestSubstring.jsx
+│
+├── utils
+│   └── longestSubstring.js
+│
+├── App.js
+├── index.js
+└── index.css
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 💻 How to Run
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Clone the repository:
 
-## Learn More
+```bash
+git clone <your-repository-url>
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Navigate into the project:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd substring-analyzer-react
+```
 
-### Code Splitting
+Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+Open your browser:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```text
+http://localhost:3000
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🧪 Example
 
-### Deployment
+### Input
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```text
+abcabcbb
+```
 
-### `npm run build` fails to minify
+### Output
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
+Longest Substring:
+abc
+
+Length:
+3
+```
+
+---
+
+## 🧠 Algorithm
+
+This project uses the **Sliding Window** technique.
+
+### Steps
+
+1. Maintain two pointers (`left` and `right`).
+2. Expand the window by moving `right`.
+3. If a duplicate character is found, move `left` past the previous occurrence.
+4. Track the longest valid substring during traversal.
+
+---
+
+## ⏱️ Complexity Analysis
+
+| Metric           | Complexity       |
+| ---------------- | ---------------- |
+| Time Complexity  | **O(n)**         |
+| Space Complexity | **O(min(n, m))** |
+
+Where:
+
+* **n** = length of the input string
+* **m** = size of the character set
+
+---
+
+## 📸 Screenshots
+
+You can add screenshots here after running the project.
+
+Example:
+
+```text
+screenshots/
+│
+├── light-mode.png
+├── dark-mode.png
+└── mobile-view.png
+```
+
+---
+
+## 🚀 Future Improvements
+
+* Character frequency chart
+* Search history
+* Export analysis as PDF
+* Word frequency analysis
+* Theme customization
+* Animated substring visualization
+* Unit tests with Jest
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, I practiced:
+
+* React Functional Components
+* React Hooks (`useState`)
+* Component-based architecture
+* State management
+* Conditional rendering
+* Responsive UI design
+* JavaScript ES6+
+* Sliding Window algorithm
+* Git workflow with incremental commits
+* Writing reusable utility functions
+
+---
+
+## 📜 Original LeetCode Problem
+
+**LeetCode #3 — Longest Substring Without Repeating Characters**
+
+Given a string `s`, find the length of the longest substring without repeating characters.
+
+This project extends the original problem by providing an interactive React interface instead of only returning the algorithm's result.
+
+---
+
+## 👨‍💻 Author
+
+**Vansh Tuteja**
+
+Software Development Student | React Developer | MERN Stack Enthusiast
+
+---
+
+If you found this project helpful, feel free to ⭐ the repository.

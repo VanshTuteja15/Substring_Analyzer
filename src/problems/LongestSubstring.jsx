@@ -2,52 +2,73 @@ import { useState } from "react";
 import longestSubstring from "../utils/longestSubstring";
 
 function LongestSubstring() {
+  const [text, setText] = useState("");
 
-    const [text, setText] = useState("");
+  const result = longestSubstring(text);
 
-    const result = longestSubstring(text);
+  const uniqueCharacters = [...new Set(text)];
 
-    const uniqueCharacters = new Set(text);
+  return (
+    <div className="container">
+      <h1>🚀 Smart Text Analyzer</h1>
 
-    return (
+      <p className="subtitle">
+        LeetCode #3 - Longest Substring Without Repeating Characters
+      </p>
 
-        <div>
+      <div className="card">
+        <h3>Enter Text</h3>
 
-            <h2>
-                Smart Text Analyzer 🚀
-            </h2>
+        <input
+          className="text-input"
+          type="text"
+          placeholder="Try typing abcabcbb..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+      </div>
 
-            <input
-                type="text"
-                placeholder="Start typing..."
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-            />
+      <div className="card">
+        <h3>Longest Substring</h3>
 
-            <hr />
-
-            <h3>Analysis</h3>
-
-            <p>
-                <strong>Input Length:</strong> {text.length}
-            </p>
-
-            <p>
-                <strong>Unique Characters:</strong> {uniqueCharacters.size}
-            </p>
-
-            <p>
-                <strong>Longest Substring:</strong> {result.substring}
-            </p>
-
-            <p>
-                <strong>Longest Length:</strong> {result.length}
-            </p>
-
+        <div className="highlight-box">
+          {result.substring || "Start typing..."}
         </div>
 
-    );
+        <p>
+          <strong>Length:</strong> {result.length}
+        </p>
+      </div>
 
+      <div className="card">
+        <h3>Statistics</h3>
+
+        <p>Total Characters: {text.length}</p>
+
+        <p>Unique Characters: {uniqueCharacters.length}</p>
+
+        <p>Duplicate Characters: {text.length - uniqueCharacters.length}</p>
+
+        <p>Algorithm: Sliding Window (O(n))</p>
+      </div>
+
+      <div className="card">
+        <h3>Unique Characters</h3>
+
+        <div className="badge-container">
+          {uniqueCharacters.length === 0 ? (
+            <p>No characters yet.</p>
+          ) : (
+            uniqueCharacters.map((char, index) => (
+              <span key={index} className="badge">
+                {char}
+              </span>
+            ))
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default LongestSubstring;
